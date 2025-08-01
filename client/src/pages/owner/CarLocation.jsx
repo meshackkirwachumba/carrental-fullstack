@@ -95,7 +95,7 @@ function CarLocation() {
     <div className='p-4 my-2'>
       {carData && <h1 className='text-4xl font-bold'>Tracking {carData[0]?.brand}</h1>}
       <MapView  vehicleCoords={vehicleCoords} locationHistory={locationHistory} />
-      <button className='mt-2 rounded-lg p-2 bg-green-300' onClick={()=> fetchCarHistory(vehicleId)}>
+      <button className='mt-2 rounded-lg p-2 bg-green-300 cursor-pointer' onClick={()=> fetchCarHistory(vehicleId)}>
         View Its Location History
       </button>
     </div>
