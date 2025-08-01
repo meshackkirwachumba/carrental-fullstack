@@ -6,9 +6,7 @@ import MapView from '../../components/owner/MapView';
 import toast from "react-hot-toast"
 
 
-
-// "undefined" means the URL will be computed from the `window.location` object
-const URL = import.meta.env.VITE_BASE_URL
+const URL = "https://carrental-server-ten.vercel.app"
 
 export const socket = io(URL);
 
