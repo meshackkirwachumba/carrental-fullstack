@@ -8,7 +8,7 @@ import toast from "react-hot-toast"
 
 
 // "undefined" means the URL will be computed from the `window.location` object
-const URL = process.env.NODE_ENV === 'production' ? undefined : 'http://localhost:3000';
+const URL = import.meta.env.VITE_BASE_URL
 
 export const socket = io(URL);
 
@@ -21,7 +21,7 @@ function CarLocation() {
 
   const fetchCarData = async(id)=>{
     try {
-      const {data} = await axios.get(`http://localhost:3000/api/bookings/car-details/${id}`)
+      const {data} = await axios.get(`/api/bookings/car-details/${id}`)
 
         if(data.success){
             setCarData(data.carDetails)
@@ -83,7 +83,7 @@ function CarLocation() {
           } else{
             toast.error(data.message)
           }
-          console.log("Location coords:", data.carLocationHistory);
+          
           
         } catch (error) {
           toast.error(error.message)
