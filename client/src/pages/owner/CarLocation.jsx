@@ -23,7 +23,6 @@ function CarLocation() {
 
         if(data.success){
             setCarData(data.carDetails)
-            console.log("car details:", data.carDetails);
             
           }else{
             toast.error(data.message)
